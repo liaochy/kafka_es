@@ -18,7 +18,7 @@ do
 done
 
 JAVA_OPT="-server -Xms1024m -Xmx1024m -XX:NewSize=256m -XX:MaxNewSize=256m -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=70 -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintTenuringDistribution -Xloggc:$KAFKA_ES_LOGS/gc.log -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=$KAFKA_ES_LOGS/gc_dump"
-nohup java $JAVA_OPT -classpath $CLASSPATH com.sohu.tv.m.kafka.es.IndexLoader  $1>>/dev/null 2>&1 &
+nohup java $JAVA_OPT -Dkafka_es.log.dir=$KAFKA_ES_LOGS -Dkafka_es.log.file=es_caton.log -classpath $CLASSPATH com.sohu.tv.m.kafka.es.IndexLoader  $1>>/dev/null 2>&1 &
 
 # add pid file
 PID_FOLDER=$KAFKA_ES_HOME/pids

@@ -100,7 +100,7 @@ import java.util.concurrent.TimeUnit;
  * <p>The common pool is by default constructed with default
  * parameters, but these may be controlled by setting three {@link
  * System#getProperty system properties} with prefix {@code
- * java.util.concurrent.ForkJoinPool.common}: {@code parallelism} --
+ * java.utils.concurrent.ForkJoinPool.common}: {@code parallelism} --
  * an integer greater than zero, {@code threadFactory} -- the class
  * name of a {@link ForkJoinWorkerThreadFactory}, and {@code
  * exceptionHandler} -- the class name of a {@link
@@ -3368,11 +3368,11 @@ public class ForkJoinPool extends AbstractExecutorService {
         Thread.UncaughtExceptionHandler handler = null;
         try {  // TBD: limit or report ignored exceptions?
             String pp = System.getProperty
-                ("java.util.concurrent.ForkJoinPool.common.parallelism");
+                ("java.utils.concurrent.ForkJoinPool.common.parallelism");
             String hp = System.getProperty
-                ("java.util.concurrent.ForkJoinPool.common.exceptionHandler");
+                ("java.utils.concurrent.ForkJoinPool.common.exceptionHandler");
             String fp = System.getProperty
-                ("java.util.concurrent.ForkJoinPool.common.threadFactory");
+                ("java.utils.concurrent.ForkJoinPool.common.threadFactory");
             if (fp != null)
                 fac = ((ForkJoinWorkerThreadFactory)ClassLoader.
                        getSystemClassLoader().loadClass(fp).newInstance());

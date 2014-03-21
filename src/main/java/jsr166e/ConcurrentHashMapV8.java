@@ -225,7 +225,7 @@ public class ConcurrentHashMapV8<K,V>
     /**
      * An object for traversing and partitioning elements of a source.
      * This interface provides a subset of the functionality of JDK8
-     * java.util.Spliterator.
+     * java.utils.Spliterator.
      */
     public static interface ConcurrentHashMapSpliterator<T> {
         /**
@@ -282,7 +282,7 @@ public class ConcurrentHashMapV8<K,V>
      * concurrent readability (typically method get(), but also
      * iterators and related methods) while minimizing update
      * contention. Secondary goals are to keep space consumption about
-     * the same or better than java.util.HashMap, and to support high
+     * the same or better than java.utils.HashMap, and to support high
      * initial insertion rates on an empty table by many threads.
      *
      * This map usually acts as a binned (bucketed) hash table.  Each
